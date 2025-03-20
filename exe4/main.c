@@ -23,7 +23,7 @@ void btn_callback(uint gpio, uint32_t events) {
             xSemaphoreGiveFromISR(xSemaphore_r, 0);
         }
     }
-    else{
+    else if (gpio == BTN_PIN_G){
         xSemaphoreGiveFromISR(xSemaphore_g, 0);
     }
 }
@@ -104,7 +104,7 @@ void btn_2_task(void *p) {
             } else {
                 delay = 100;
             }
-            printf("delay btn %d \n", delay);
+            printf("delay btn2 %d \n", delay);
             xQueueSend(xQueueButId2, &delay, 0);
         }
     }
