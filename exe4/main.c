@@ -22,9 +22,9 @@ void btn_callback(uint gpio, uint32_t events) {
         if(gpio == BTN_PIN_R){
             xSemaphoreGiveFromISR(xSemaphore_r, 0);
         }
-    }
-    else if (gpio == BTN_PIN_G){
-        xSemaphoreGiveFromISR(xSemaphore_g, 0);
+        else if (gpio == BTN_PIN_G){
+            xSemaphoreGiveFromISR(xSemaphore_g, 0);
+        }
     }
 }
 
